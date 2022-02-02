@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/style.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;600&display=swap" rel="stylesheet">
+
+    <script src="js/script1.js"></script>
+    <script src="moment.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Seção de Materiais</h1>
+    </header>
+
+    <main>
+        <div class="title">
+            <h2>Materiais</h2>
+            <span>Cadastro de Materiais</span>
+        </div>
+
+        <div class="card">
+            <div class="lineInput">
+                <labe>Material</label>
+                    <input type="text" id="material" placeholder="Objeto">
+            </div>
+
+            <div class="lineInput">
+                <labe>Descrição</label>
+                    <input type="text" id="descricao" placeholder="Descrição do material">
+            </div>
+
+            <div class="lineInput">
+                <labe>Quantidade</label>
+                    <input type="number" id="qntd" placeholder="Quantidades do material">
+            </div>
+
+            <div class="lineInput">
+                <labe>Data de Cadastro</label>
+                    <input type="datetime-local" id="data">
+            </div>
+            <form>
+            <div class="lineInput">
+                <labe>Imagem</label>
+                    <input type="file" id="file" >
+                    <img id='img' src=''>
+            </div>
+            </form>
+
+            <button id="Salvar" type="button" onclick="material.salvar()">Salvar</button>
+            <button id="ButtonCancelar" type="button" onclick="material.cancelar()">Cancelar</button>
+
+            <div class="content">
+                <div class="title">
+                <h2>Lista de Materiais Cadastrados</h2>
+            </div>
+                <table border="1"> 
+                    <thead>
+                        <th class="center">ID</th>
+                        <th>Material</th>
+                        <th>Descrição</th>
+                        <th>Quantidade</th>
+                        <th>Imagem</th>
+                        <th>Data</th>
+                        <th class="center">Ações</th>
+                    </thead>
+                    <!--<tbody id="tbody1">
+                        <tr>
+                            <td class='center'>1</td>
+                            <td>Processador Intel Core i9-7920X Skylake, Cache 16.5MB, 2.9GHz (4.3GHz Max Turbo), LGA 2066 - BX80673I97920X</td>
+                            <td>Com esse processador inovador e incrível você desfruta ao máximo o verdadeiro potencial do seu computador e desfruta da mais pura velocidade. Maximize o seu desempenho seja trabalhando, jogand</td>
+                            <td class="center">1</td>
+                            <td class="material"><img src="img/Intel_Core_i9.png" alt="Processador Intel Core I9"></td>
+                            <td>2021-11-25 14:00:00.01</td>
+                            <td class="center"><img src="img/comentario.png" alt="">
+                                <img id='deletar' src="img/deletar.png" alt="">
+                                  <img src="img/editar-arquivo.png" alt="">
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class='center'>2</td>
+                            <td>Monitor, Dell, U2518D, UltraSharp, Preto e Suporte em Alumínio, 25"</td>
+                            <td>Dê vida ao seu trabalho com uma tela de 25 polegadas quase sem bordas que conta com detalhes em cores vívidas e consistentes graças a tecnologia hdr, resolução qhd e ângulo de visão ultra-amplo. Aumente sua performance com os recursos dell display manager, dell easy arrange e trabalhe confortavelmente graça a um suporte totalmente ajustável e recurso confortview.</td>
+                            <td class="center">0</td>
+                            <td class="material"><img src="img/Monitor_Dell.png" alt="Monitor de computador"></td>
+                            <td>2021-11-12 15:30:00.02</td>
+                            <td class="center"><img src="img/comentario.png" alt="">
+                                <img src="img/deletar.png" alt="">
+                                  <img src="img/editar-arquivo.png" alt="">
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class='center'>3</td>
+                            <td>Mouse Gamer Razer Deathadder Essential Óptico 5 Botões 4G 6.400 DPI</td>
+                            <td>Nada melhor do que um mouse gamer com tecnologia de ponta para qualificar seus comandos e aprimorar suas jogadas nos games. Com este Mouse Gamer Razer, sua atuação nas batalhas gamers serão ainda mais bem-sucedidas, com desempenho acima da média e desenvoltura arrasadora, que vai deixar seus oponentes impressionados. O mouse Razer Deathadder Essential tem sensor óptico de 6400 DPI de 4G, 5 botões, design moderno e ergonômico, especialmente projetado para jogadores destros, e uma empunhadura lateral emborrachada que garante mais firmeza ao manuseio do equipamento, melhorando as respostas obtidas pelos players. O mouse Razer ainda oferece ajuste de sensibilidade, pezinhos Ultraslick silenciosos, cabo ultra resistente de fibra trançada e Modo Always-On, que mantém o mouse ligado mesmo quando o equipamento estiver inativo. É um mouse gamer Razer para ninguém botar defeito, com todas as funções e especificações técnicas que você precisa para ter mais produtividade nos jogos. O Razer Deathadder Essential é realmente essencial e ainda tem o diferencial de estar habilitado para Razer Synapse 3 e de ser compatível com PC e Mac, com porta USB. Conheça o modelo e faça um investimento seguro!</td>
+                            <td class="center">1</td>
+                            <td class="material"><img src="img/Mouse_Razer.png" alt="Mouse"></td>
+                            <td>2021-11-07 16:00:00.03</td>
+                            <td class="center"><img src="img/comentario.png" alt="">
+                                <img src="img/deletar.png" alt="">
+                                  <img src="img/editar-arquivo.png" alt="">
+                                </td>
+                        </tr>
+                        <tr>
+                            <td class='center'>4</td>
+                            <td>All-in-One Media Keyboard</td>
+                            <td>O All-in-One Media Keyboard é o dispositivo ideal para sua sala ou home office. Com teclado em tamanho natural e trackpad multitoque integrado, é possível digitar, passar o dedo, arrastar, fazer zoom e clicar facilmente. O teclado com teclas de atalho de mídia personalizáveis permite que a Web e suas músicas, fotos e filmes favoritos estejam a seu alcance. O teclado também tem um design resistente, portanto, não é necessário se preocupar com esbarrões, quedas ou derramamentos comuns. O All-in-One Media Keyboard é tudo o que você precisa para digitar confortavelmente e navegar sem esforço.</td>
+                            <td class="center">0</td>
+                            <td class="material"><img src="img/Teclado_Microsoft.png" alt="Teclado da microsoft"></td>
+                            <td>2021-11-11 17:54:00.04</td>
+                            <td class="center">
+                                
+                                
+                                <a class="comentariosLink" href="pages/comentarios.html" alt="" >
+                                <img src="img/comentario.png" alt="">
+                                <img class="deletar" src="img/deletar.png" alt="">
+                                <img src="img/editar-arquivo.png" alt="">
+                                </td>
+                        </tr>
+                    </tbody>
+                    -->
+                    <tbody id="tbody2">
+                        <img id='img' src=''>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+  
+</body>
+</html>
