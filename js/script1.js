@@ -2,7 +2,7 @@
 class Material{
 
     constructor(){
-    this.id = 5;
+    this.id = 1;
     this.arrayMateriais = [];
     this.editId = null;
     }
@@ -20,7 +20,6 @@ class Material{
           
        }    
        
-       //console.log(this.arrayMateriais);
        this.listaTabela();
        this.cancelar();
 
@@ -47,7 +46,6 @@ class Material{
      }
 
      adicionar(material){
-
         this.arrayMateriais.push(material);
         this.id++;
     }
@@ -135,9 +133,8 @@ class Material{
         document.getElementById('qntd').value = dados.qntdMaterial;
         document.getElementById('data').value = dados.dataMaterial;
         document.getElementById('Salvar').innerText = 'Atualizar';
+        document.querySelector('file').files[0] = material.imgMaterial;
         /* Converter a variável dados.imgMaterial para img novamente pois está em formato JSON*/
-        var file = JSON.parse(dados.imgMaterial);
-        console.log(file);
        /* document.querySelector('#files').addEventListener('change', function () {
             console.log(Array.from(this.files))
          })*/
