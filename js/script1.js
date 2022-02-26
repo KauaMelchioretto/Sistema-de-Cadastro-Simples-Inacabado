@@ -121,7 +121,7 @@ class Material{
                 this.arrayMateriais[i].descricaoMaterial = material.descricaoMaterial;
                 this.arrayMateriais[i].qntdMaterial = material.qntdMaterial;
                 this.arrayMateriais[i].dataMaterial = material.dataMaterial;
-                this.arrayMateriais[i].imgMaterial = material.imgMaterial;       
+                this.arrayMateriais[i].imgMaterial = this.arrayMateriais[i].imgMaterial;       
             }
         }
     }
@@ -133,11 +133,9 @@ class Material{
         document.getElementById('qntd').value = dados.qntdMaterial;
         document.getElementById('data').value = dados.dataMaterial;
         document.getElementById('Salvar').innerText = 'Atualizar';
+        /* Erro ao retornar o Stringfy de imagem do material para o input, necessário converter de objeto
+        para blob*/
         document.querySelector('file').files[0] = material.imgMaterial;
-        /* Converter a variável dados.imgMaterial para img novamente pois está em formato JSON*/
-       /* document.querySelector('#files').addEventListener('change', function () {
-            console.log(Array.from(this.files))
-         })*/
     }
     
     cancelar(){
