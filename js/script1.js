@@ -39,7 +39,7 @@ class Material{
          material.nomeMaterial = document.getElementById('material').value;
          material.descricaoMaterial = document.getElementById('descricao').value;
          material.qntdMaterial = document.getElementById('qntd').value;
-         material.dataMaterial = document.getElementById('data').value;
+         material.dataMaterial = date;
         // document.getElementById('data').value = date;
          material.imgMaterial = document.getElementById('file').files[0];
          return material;
@@ -127,11 +127,15 @@ class Material{
     }
 
     preparaEdicao(dados){
+        var date = new Date();
+        date = date.toLocaleString();
+        moment(new Date()).format("YYYY-MM-DDTHH:mm:ss.SSS");
+        
         this.editId = dados.idMaterial;
         document.getElementById('material').value = dados.nomeMaterial;
         document.getElementById('descricao').value = dados.descricaoMaterial;
         document.getElementById('qntd').value = dados.qntdMaterial;
-        document.getElementById('data').value = dados.dataMaterial;
+        material.dataMaterial = date;
         document.getElementById('Salvar').innerText = 'Atualizar';
         /*Erro na atribuição do imgMaterial em stringfy no input file, converter para blob ou file*/
         document.querySelector('file').files[0] = material.imgMaterial;
@@ -141,7 +145,7 @@ class Material{
         document.getElementById('material').value = '';
         document.getElementById('descricao').value = '';
         document.getElementById('qntd').value = ''; 
-        document.getElementById('data').value = '';
+        document.getElementById('file').value = '';
         document.getElementById('Salvar').innerText = 'Salvar';
         this.editId = null;
 
